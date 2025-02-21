@@ -1,0 +1,31 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    
+    body {
+        background: rgba(0, 0, 0, 0); /* Transparent background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    #score {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 50px;
+        color: white;
+    }
+</style>
+
+<div id="score">100</div>
+
+<script>
+    let score = 100; // Start at 100
+
+    function updateScore() {
+        score += 2; // Increase by 2
+        document.getElementById("score").innerText = score.toString().padStart(6, '0'); // Format like dino game
+    }
+
+    setInterval(updateScore, 1000); // Update every 1 second (2 points per second)
+</script>
