@@ -1,31 +1,40 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-    
-    body {
-        background: rgba(0, 0, 0, 0); /* Transparent background */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-    
-    #score {
-        font-family: 'Press Start 2P', cursive;
-        font-size: 50px;
-        color: white;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Score</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-<div id="score">100</div>
+        body {
+            background-color: black; /* Sets the background color to black */
+            display: flex; /* Enables flexbox layout */
+            justify-content: center; /* Centers content horizontally */
+            align-items: center; /* Centers content vertically */
+            height: 100vh; /* Sets height to full viewport height */
+            margin: 0; /* Removes default margin */
+        }
 
-<script>
-    let score = 100; // Start at 100
+        #score {
+            font-family: 'Press Start 2P', cursive; /* Sets font */
+            font-size: 50px; /* Sets font size */
+            color: white; /* Sets text color to white */
+        }
+    </style>
+</head>
+<body>
+    <div id="score">000100</div> <!-- Score starts at 100 -->
 
-    function updateScore() {
-        score += 2; // Increase by 2
-        document.getElementById("score").innerText = score.toString().padStart(6, '0'); // Format like dino game
-    }
+    <script>
+        let score = 100; // Start score
 
-    setInterval(updateScore, 1000); // Update every 1 second (2 points per second)
-</script>
+        function updateScore() {
+            score += 2; // Increase score by 2
+            document.getElementById("score").innerText = score.toString().padStart(6, '0'); // Format score to 6 digits
+        }
+
+        setInterval(updateScore, 1000); // Update score every second
+    </script>
+</body>
+</html>
